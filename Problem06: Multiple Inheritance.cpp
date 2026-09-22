@@ -1,47 +1,44 @@
 #include <iostream>
-#include <string>
-#include <utility>
 
-class Vehicle {
+class Academic {
 protected:
-    std::string registrationNumber;
+    int academicMarks;
 
 public:
-    explicit Vehicle(std::string registration)
-        : registrationNumber(std::move(registration)) {}
+    explicit Academic(int marks) : academicMarks(marks) {}
 
-    void start() const {
-        std::cout << "Vehicle " << registrationNumber << " started\n";
+    void showAcademic() const {
+        std::cout << "Academic Marks: " << academicMarks << '\n';
     }
 };
 
-class Car : public Vehicle {
-public:
-    explicit Car(std::string registration) : Vehicle(std::move(registration)) {}
+class Sports {
+protected:
+    int sportsMarks;
 
-    void openBoot() const {
-        std::cout << "Car boot opened\n";
+public:
+    explicit Sports(int marks) : sportsMarks(marks) {}
+
+    void showSports() const {
+        std::cout << "Sports Marks: " << sportsMarks << '\n';
     }
 };
 
-class Bike : public Vehicle {
+class Student : public Academic, public Sports {
 public:
-    explicit Bike(std::string registration) : Vehicle(std::move(registration)) {}
+    Student(int academic, int sports)
+        : Academic(academic), Sports(sports) {}
 
-    void helmetReminder() const {
-        std::cout << "Please wear a helmet\n";
+    void showTotal() const {
+        std::cout << "Total Marks: " << academicMarks + sportsMarks << '\n';
     }
 };
 
 int main() {
-    Car car("MH14EF2468");
-    Bike bike("MH14GH1357");
-
-    car.start();
-    car.openBoot();
-
-    bike.start();
-    bike.helmetReminder();
+    Student student(72, 18);
+    student.showAcademic();
+    student.showSports();
+    student.showTotal();
 
     return 0;
 }
