@@ -2,27 +2,29 @@
 
 class Base {
 public:
-void show() const {
-std::cout << "Base class public function\n";
-}
+    void show() const {
+        std::cout << "Base class function\n";
+    }
 };
+
 class PublicDerived : public Base {
 };
+
 class PrivateDerived : private Base {
 public:
-void callBaseShow() const {
-show();
-}
+    void callBaseShow() const {
+        show();
+    }
 };
 
 int main() {
-PublicDerived publicObject;
-publicObject.show();
+    PublicDerived publicObject;
+    publicObject.show();
 
-PrivateDerived privateObject;
-privateObject.callBaseShow();
+    PrivateDerived privateObject;
+    privateObject.callBaseShow();
 
-// privateObject.show(); // Error: show() is private through private inheritance.
+    // privateObject.show(); // Error: show() is private through private inheritance.
 
-return 0;
+    return 0;
 }
