@@ -15,14 +15,6 @@ public:
     void displayBasicInfo() const {
         cout << "ID: " << empId
              << " | Name: " << name
-
-Zeal Education Society’s
-
-ZEAL COLLEGE OF ENGINEERING & RESEARCH, PUNE – 41
-(An Autonomous Institute Affiliated to Savitribai Phule Pune University)
-NBA Accredited, NAAC Accredited with A+ Grade, ISO 21001:2018
-DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE
-
              << " | Department: " << department;
     }
 
@@ -53,13 +45,6 @@ class PartTimeEmployee : public Employee {
 private:
     double hourlyRate;
     int hoursWorked;
-
-Zeal Education Society’s
-
-ZEAL COLLEGE OF ENGINEERING & RESEARCH, PUNE – 41
-(An Autonomous Institute Affiliated to Savitribai Phule Pune University)
-NBA Accredited, NAAC Accredited with A+ Grade, ISO 21001:2018
-DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE
 
 public:
     PartTimeEmployee(int id, string n, string dept, double rate, int hours)
@@ -92,13 +77,6 @@ public:
         displayBasicInfo();
         cout << " | Type: Intern | Stipend: Rs. "
              << calculateSalary() << endl;
-
-Zeal Education Society’s
-
-ZEAL COLLEGE OF ENGINEERING & RESEARCH, PUNE – 41
-(An Autonomous Institute Affiliated to Savitribai Phule Pune University)
-NBA Accredited, NAAC Accredited with A+ Grade, ISO 21001:2018
-DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE
     }
 };
 
